@@ -6,7 +6,14 @@
         <title>Mini Project Research</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
     </head>
-    <script src='main.js'></script>
+    <script>
+        let submitted = false;
+        function onSuccess() 
+        {
+            alert("Form submitted successfully!");
+            submitted = false;
+        }
+    </script>
 <body>
     <h1>My App</h1>
     <form
@@ -28,6 +35,10 @@
     style="display:none"
     onload="if(submitted){onSuccess();}"
     ></iframe>
-    
+
+    <button id="loadDataBtn">Load Sheet Data</button>
+
+    <div id="sheetData"></div>
+    <script src='main.js'></script>
 </body>
 </html>
