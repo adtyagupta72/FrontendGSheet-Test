@@ -3,7 +3,7 @@
     document
     .getElementById("loadDataBtn")
     .addEventListener("click", () => {
-      fetch("/getSheetData")
+      fetch("/.netlify/functions/getSheetData")
         .then(res => res.json())
         .then(data => {
           renderTable(data);
