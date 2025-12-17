@@ -15,6 +15,8 @@
     });
 
   function renderTable(data) {
+
+    console.log("data:", data)
     if (!data.length) {
       document.getElementById("sheetData").innerHTML =
         "<p>No data found</p>";
