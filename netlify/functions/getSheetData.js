@@ -1,7 +1,7 @@
 exports.handler = async () => {
   try {
     const res = await fetch(
-      "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec"
+      "https://script.google.com/macros/s/AKfycbwakjgydb7ZQwMS7s37VLYCHKXmztWhCqmhhbyitgKclIDhaHKpjaCSexq7l5zEPkaeiA/exec"
     );
 
     const data = await res.json();
