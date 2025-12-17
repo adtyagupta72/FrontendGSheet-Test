@@ -6,15 +6,28 @@
         <title>Mini Project Research</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
     </head>
+    <script src='main.js'></script>
 <body>
     <h1>My App</h1>
-    <form id="contactForm">
-        <input id="name" placeholder="Enter Name"/><br/>
-        <input id="email" type="email" placeholder="Enter Email"/><br/>
-        <input id="phone" type="tel" placeholder="Enter Phone Number"/><br/>
-        <textarea id="message" placeholder="Enter Message" ></textarea><br/>
-        <button type="submit">Submit</button>
+    <form
+    action="https://script.google.com/macros/s/AKfycbwakjgydb7ZQwMS7s37VLYCHKXmztWhCqmhhbyitgKclIDhaHKpjaCSexq7l5zEPkaeiA/exec"
+    method="POST"
+    target="hidden_iframe"
+    onsubmit="submitted=true;"
+    >
+    <input type="text" name="name" required placeholder="Name" />
+    <input type="email" name="email" required placeholder="Email" />
+    <input type="tel" name="phone" placeholder="Phone" />
+    <textarea name="message" placeholder="Message"></textarea>
+
+    <button type="submit">Submit</button>
     </form>
-    <script src='main.js'></script>
+
+    <iframe
+    name="hidden_iframe"
+    style="display:none"
+    onload="if(submitted){onSuccess();}"
+    ></iframe>
+    
 </body>
 </html>
