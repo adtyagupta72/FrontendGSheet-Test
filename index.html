@@ -1,44 +1,70 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <title>CRUD App</title>
+    </head>
+<body>
+
+    <h2>CRUD with Google Sheets</h2>
+
+    <input id="id" type="hidden">
+    <input id="name" placeholder="Name"><br>
+    <input id="email" placeholder="Email"><br>
+    <input id="phone" placeholder="Phone"><br>
+    <textarea id="message" placeholder="Message"></textarea><br>
+
+    <button onclick="create()">Create</button>
+    <button onclick="update()">Update</button>
+
+    <hr>
+    <table border="1" id="table"></table>
+
+    <script src="main.js"></script>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>Mini Project Research</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script>
+            let submitted = false;
+            function onSuccess() 
+            {
+                alert("Form submitted successfully!");
+                submitted = false;
+            }
+        </script>
     </head>
-    <script>
-        let submitted = false;
-        function onSuccess() 
-        {
-            alert("Form submitted successfully!");
-            submitted = false;
-        }
-    </script>
 <body>
     <h1>My App</h1>
     <form
-    action="https://script.google.com/macros/s/AKfycbwakjgydb7ZQwMS7s37VLYCHKXmztWhCqmhhbyitgKclIDhaHKpjaCSexq7l5zEPkaeiA/exec"
-    method="POST"
-    target="hidden_iframe"
-    onsubmit="submitted=true;"
-    >
-    <input type="text" name="name" required placeholder="Name" />
-    <input type="email" name="email" required placeholder="Email" />
-    <input type="tel" name="phone" placeholder="Phone" />
-    <textarea name="message" placeholder="Message"></textarea>
+        action="https://script.google.com/macros/s/AKfycbwakjgydb7ZQwMS7s37VLYCHKXmztWhCqmhhbyitgKclIDhaHKpjaCSexq7l5zEPkaeiA/exec"
+        method="POST"
+        target="hidden_iframe"
+        onsubmit="submitted=true;">
+        <input type="text" name="name" required placeholder="Name" /><br/>
+        <input type="email" name="email" required placeholder="Email" /><br/>
+        <input type="tel" name="phone" placeholder="Phone" /><br/>
+        <textarea name="message" placeholder="Message"></textarea><br/>
 
-    <button type="submit">Submit</button>
+        <button type="submit">Submit</button>
     </form>
 
     <iframe
-    name="hidden_iframe"
-    style="display:none"
-    onload="if(submitted){onSuccess();}"
-    ></iframe>
+        name="hidden_iframe"
+        style="display:none"
+        onload="if(submitted){onSuccess();}">
+    </iframe>
 
     <button id="loadDataBtn">Load Sheet Data</button>
 
     <div id="sheetData"></div>
     <script src='main.js'></script>
 </body>
-</html>
+</html> -->
