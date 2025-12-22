@@ -8,30 +8,41 @@ function create() {
 }
 
 function loadData() {
-  fetch(`${API_URL}?action=read`)
+
+  fetch("/.netlify/functions/getSheetData")
     .then(res => res.json())
     .then(data => {
-      let html = `<tr>
-        <th>Name</th><th>Email</th><th>Phone</th><th>Message</th><th>Action</th>
-      </tr>`;
-
-      data.forEach(d => {
-        html += `
-          <tr>
-            <td>${d.name}</td>
-            <td>${d.email}</td>
-            <td>${d.phone}</td>
-            <td>${d.message}</td>
-            <td>
-              <button onclick='edit(${JSON.stringify(d)})'>Edit</button>
-              <button onclick='del("${d.id}")'>Delete</button>
-            </td>
-          </tr>
-        `;
-      });
-
-      document.getElementById("table").innerHTML = html;
+      gotTheData(data);
+    })
+    .catch(err => {
+      console.error(err);
+      alert("Failed to load data");
     });
+
+  // fetch(`${API_URL}?action=read`)
+  //   .then(res => res.json())
+  //   .then(data => {
+  //     let html = `<tr>
+  //       <th>Name</th><th>Email</th><th>Phone</th><th>Message</th><th>Action</th>
+  //     </tr>`;
+
+  //     data.forEach(d => {
+  //       html += `
+  //         <tr>
+  //           <td>${d.name}</td>
+  //           <td>${d.email}</td>
+  //           <td>${d.phone}</td>
+  //           <td>${d.message}</td>
+  //           <td>
+  //             <button onclick='edit(${JSON.stringify(d)})'>Edit</button>
+  //             <button onclick='del("${d.id}")'>Delete</button>
+  //           </td>
+  //         </tr>
+  //       `;
+  //     });
+
+  //     document.getElementById("table").innerHTML = html;
+  //   });
 }
 
 function edit(d) {
